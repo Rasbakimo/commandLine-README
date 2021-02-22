@@ -10,76 +10,58 @@ const questions = [
         type: 'input',
         message: "Github user name?",
         name: 'username',
-        default: 'Rasbakimo-dev',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("A valid GitHub username is required.");
-            }
-            return true;
-        }
-    },
-    {
-        type: 'input',
-        message: "GitHub repo?",
-        name: 'repo',
-        default: 'commandLine-README',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("A valid GitHub repo is required for a badge.");
-            }
-            return true;
-        }
-    },
+        default: 'Rasbakimo-dev'
+       },
+       {
+        type: "input",
+        name: "email ",
+        message: "Enter email address",
+        default: 'bakiocleckley@yahoo.com'
+       },
+     
     {
         type: 'input',
         message: "Project title?",
         name: 'title',
-        default: 'Project Title',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("A valid project title is required.");
-            }
-            return true;
-        }
-    },
+        default: 'Project Title'
+        },
     {
         type: 'input',
-        message: "Write a description of your project.",
+        message: "What's the Objective.",
         name: 'description',
-        default: 'Project Description',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("A valid project description is required.");
-            }
-            return true;
-        }
+        default: 'A quality README file template'
+         },
+    {
+        type: 'input',
+        message: "Here's how to install it.",
+        name: 'install node and inquirer'
     },
     {
         type: 'input',
-        message: "If applicable, describe the steps required to install your project for the Installation section.",
-        name: 'installation'
+        message: "Instructions and demo",
+        name: 'usage',
+        default: " vid or pic here"
     },
     {
         type: 'input',
-        message: "Provide instructions and examples of your project in use for the Usage section.",
-        name: 'usage'
+        message: "Here's how to add contributions, please feel free to do so.",
+        name: 'contributing',
+        default: 'use git workflow to push your contributoins'
     },
     {
         type: 'input',
-        message: "If applicable, provide guidelines on how other developers can contribute to your project.",
-        name: 'contributing'
-    },
-    {
-        type: 'input',
-        message: "If applicable, provide any tests written for your application and provide examples on how to run them.",
-        name: 'tests'
+        message: "Here's how to test the app.",
+        name: 'tests',
+        default:" Run it and use the terminal's console log to check for errors."
     },
     {
         type: 'list',
-        message: "Choose a license for your project.",
+        message: "Please select a license for your project.",
         choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
         name: 'license'
     }
+    
+    
 ];
 
 function writeToFile(fileName, data) {
@@ -88,7 +70,7 @@ function writeToFile(fileName, data) {
           return console.log(err);
         }
       
-        console.log("Almost done")
+        console.log("It's in the folder")
     });
 }
 
@@ -102,7 +84,7 @@ async function init() {
         // Prompt Inquirer questions
         const userResponses = await inquirer.prompt(questions);
         console.log("Your responses: ", userResponses);
-        console.log("Retrieving Github data");
+       
     
         // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
         console.log("running data through the markDown")
@@ -110,7 +92,7 @@ async function init() {
         console.log(markdown);
     
         // Write markdown to file
-        await writeFileAsync('ExampleREADME.md', markdown);
+        await writeFileAsync('README.md', markdown);
 
     } catch (error) {
         console.log(error);
@@ -130,11 +112,7 @@ init();
 //     name: "repo",
 //     message: "Enter your GitHub repo name."
 //   },
-//   {
-//     type: "input",
-//     name: "email ",
-//     message: "Enter email address"
-//   },
+//  
 //   {
 //     type: "input",
 //     name: "projectName",

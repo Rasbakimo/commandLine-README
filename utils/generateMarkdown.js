@@ -1,6 +1,7 @@
- function generateMarkdown(userResponses) {
 
-  // Table of Contents Mkdown
+function generateMarkdown(userResponses) {
+
+  // Generate Table of Contents conditionally based on userResponses
   let draftToC = `## Table of Contents`;
 
   if (userResponses.installation !== '') { draftToC += `
@@ -16,24 +17,25 @@
   * [Tests](#tests)` };
 
 
-  // README title and badge logo
+  // Generate markdown for the top required portions of the README
   let draftMarkdown = 
   `# ${userResponses.title}
-  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor)
+  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/${userResponses.username}/${userResponses.title}?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor)
   
   Check out the badges hosted by [shields.io](https://shields.io/).
   
   
   ## Description 
   
-  *What's the Objective:* 
+  * What's the Objective:* 
   
   ${userResponses.description}
   `
-  // Add ToC
+
+  // Add Table of Contents to markdown
   draftMarkdown += draftToC;
  
-  // add license to ToC
+  // Add License section since License is required to Table of Contents
   draftMarkdown += `
   * [License](#license)`;
   
@@ -46,10 +48,12 @@
   
   ## Installation
   
-  * Here's hpw to install it:*
+  * Here's how to install it:*
   
   ${userResponses.installation}`
   };
+  
+
   // Optional Usage section
   if (userResponses.usage !== '') {
   
@@ -59,7 +63,7 @@
   
   ## Usage 
   
-  *Instructions and demo*
+  * Instructions and demo:*
   
   ${userResponses.usage}`
   };
@@ -71,7 +75,7 @@
   
   ## Contributing
   
-  *Hers's how to add contributions, please feel free to do so*
+  * Here's how to add contributions, please feel free to do so:*
   
   ${userResponses.contributing}`
   };
@@ -85,7 +89,7 @@
   
   ## Tests
   
-  *Here's how to test the app:*
+  * Here's how to test the app:*
   
   ${userResponses.tests}`
   };
@@ -99,9 +103,8 @@
   
   ${userResponses.license}
   `;
-
-
-  // Questions / About Developer section
+ 
+// Questions / About Developer section
   let draftDev = 
   `
   ---
@@ -109,24 +112,31 @@
   ## Questions?
   
   
-  
   For any questions, please contact me with the information below:
  
-  GitHub: [@${userResponses.login}](${userResponses.url})
+  GitHub: [@${userResponses.username}](${userResponses.url})
   `;
-// syntax for user input and url 
-  // If GitHub email is not null, add to Developer section
-  if (userResponses.email !== null) {
+  if (userResponses.email !== '') {
   
-  draftDev +=
-  `
-  Email: ${userResponses.email}
-  `};
+    draftMarkdown +=
+    `
+    
+    * email
+    
+     ${userResponses.email}`
+    };
+  
+  
+  
 
   // Add developer section to markdown
   draftMarkdown += draftDev;
 
   // Return markdown
   return draftMarkdown;
-  }
+  
+}
+
 module.exports = generateMarkdown;
+  
+ 
