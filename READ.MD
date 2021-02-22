@@ -1,5 +1,5 @@
-# Project Title
-  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/Rasbakimo-dev/Project Title?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/Rasbakimo-dev/undefined?style=flat&logo=appveyor)
+# README Template
+  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/Rasbakimo-dev/README Template?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/Rasbakimo-dev/undefined?style=flat&logo=appveyor)
   
   Check out the badges hosted by [shields.io](https://shields.io/).
   
@@ -20,7 +20,7 @@
   
   * Here's how to install it:*
   
-  undefined
+  install node and inquirer read docs if necessary
   
   ## Usage 
   
@@ -32,7 +32,7 @@
   
   * Here's how to test the app:*
   
-   Run it and use the terminal's console log to check for errors.
+   Run it and use the terminal's console to check for errors.
   
   ## License
   

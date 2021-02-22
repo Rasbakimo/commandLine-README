@@ -3,9 +3,10 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-
+const writeFileAsync = util.promisify(fs.writeFile);
 // Inquirer prompts for userResponses
-const questions = [
+function promptUser() {
+    return inquirer.prompt([
     {
         type: 'input',
         message: "Github user name?",
@@ -16,14 +17,14 @@ const questions = [
         type: "input",
         name: "email ",
         message: "Enter email address",
-        default: 'bakiocleckley@yahoo.com'
+        default: 'bakimocleckley@yahoo.com'
        },
      
     {
         type: 'input',
         message: "Project title?",
         name: 'title',
-        default: 'Project Title'
+        default: 'README Template'
         },
     {
         type: 'input',
@@ -34,7 +35,8 @@ const questions = [
     {
         type: 'input',
         message: "Here's how to install it.",
-        name: 'install node and inquirer'
+        name: 'installation',
+        default:'install node and inquirer read docs if necessary'
     },
     {
         type: 'input',
@@ -46,13 +48,13 @@ const questions = [
         type: 'input',
         message: "Here's how to add contributions, please feel free to do so.",
         name: 'contributing',
-        default: 'use git workflow to push your contributoins'
+        default: "Read the doc for inquirer on the npm website to see the different types of inputs. once you're done, use git workflow to push your contributoins"
     },
     {
         type: 'input',
         message: "Here's how to test the app.",
         name: 'tests',
-        default:" Run it and use the terminal's console log to check for errors."
+        default:" Run it and use the terminal's console to check for errors."
     },
     {
         type: 'list',
@@ -61,45 +63,58 @@ const questions = [
         name: 'license'
     }
     
-    
-];
-
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if (err) {
-          return console.log(err);
-        }
-      
-        console.log("It's in the folder")
-    });
+]); 
 }
 
-const writeFileAsync = util.promisify(writeToFile);
+promptUser()
+  .then(function(userResponse) {
+    const markdown = generateMarkdown(userResponse);
+
+    return writeFileAsync("READ.MD", markdown);
+  })
+  .then(function() {
+    console.log("Success check the folder");
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
+
+// // function writeToFile(fileName, data) {
+// //     fs.writeFile(fileName, data, err => {
+// //         if (err) {
+// //           return console.log(err);
+// //         }
+      
+// //         console.log("It's in the folder")
+// //     });
+// // }
+
+// // 
 
 
-// Main function
-async function init() {
-    try {
+// // // Main function
+// // async function init() {
+// //     try {
 
-        // Prompt Inquirer questions
-        const userResponses = await inquirer.prompt(questions);
-        console.log("Your responses: ", userResponses);
+// //         // Prompt Inquirer questions
+// //         const userResponses = await inquirer.prompt(questions);
+// //         console.log("Your responses: ", userResponses);
        
     
-        // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
-        console.log("running data through the markDown")
-        const markdown = generateMarkdown(userResponses);
-        console.log(markdown);
+// //         // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
+// //         console.log("running data through the markDown")
+// //         const markdown = generateMarkdown(userResponses);
+// //         console.log(markdown);
     
-        // Write markdown to file
-        await writeFileAsync('README.md', markdown);
+// //         // Write markdown to file
+// //         await writeFileAsync('README.md', markdown);
 
-    } catch (error) {
-        console.log(error);
-    }
-};
+// //     } catch (error) {
+// //         console.log(error);
+// //     }
+// // };
 
-init();
+// init();
 
 
 // {
