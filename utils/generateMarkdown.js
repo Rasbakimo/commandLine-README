@@ -1,4 +1,4 @@
- function generateMarkdown(userResponses, userInfo) {
+ function generateMarkdown(userResponses) {
 
   // Table of Contents Mkdown
   let draftToC = `## Table of Contents`;
@@ -112,15 +112,15 @@
   
   For any questions, please contact me with the information below:
  
-  GitHub: [@${userInfo.login}](${userInfo.url})
+  GitHub: [@${userResponses.login}](${userResponses.url})
   `;
-
+// syntax for user input and url 
   // If GitHub email is not null, add to Developer section
-  if (userInfo.email !== null) {
+  if (userResponses.email !== null) {
   
   draftDev +=
   `
-  Email: ${userInfo.email}
+  Email: ${userResponses.email}
   `};
 
   // Add developer section to markdown

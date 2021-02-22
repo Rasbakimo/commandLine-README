@@ -2,9 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-
-// Internal modules
-const api = require('./utils/api.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // Inquirer prompts for userResponses
@@ -107,13 +104,9 @@ async function init() {
         console.log("Your responses: ", userResponses);
         console.log("Retrieving Github data");
     
-        // Call GitHub api for user info
-        const userInfo = await api.getUser(userResponses);
-        console.log( userInfo);
-    
         // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
         console.log("running data through the markDown")
-        const markdown = generateMarkdown(userResponses, userInfo);
+        const markdown = generateMarkdown(userResponses);
         console.log(markdown);
     
         // Write markdown to file
