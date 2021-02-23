@@ -27,7 +27,7 @@
   
   * Instructions and demo:
 
-   ![screenshot](assets/Screen%5Shot%202021-02-23%20at%202.33.45%20AM.png)
+   ![screenshot](Screen Shot 2021-02-23 at 2.33.45 AM.png)
    
    
 
