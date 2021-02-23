@@ -1,4 +1,4 @@
-# README Template
+# README Template 
   ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/Rasbakimo-dev/README Template?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/Rasbakimo-dev/undefined?style=flat&logo=appveyor)
   
   Check out the badges hosted by [shields.io](https://shields.io/).
@@ -27,7 +27,7 @@
   
   * Instructions and demo:
 
-   ![screenshot](Screen Shot 2021-02-23 at 2.33.45 AM.png)
+   ![screenshot](assets/Screen Shot 2021-02-23 at 2.33.45 AM.png)
    
    
 
