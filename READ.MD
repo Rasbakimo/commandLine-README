@@ -30,7 +30,7 @@
    ![screenshot](https://github.com/Rasbakimo/commandLine-README/blob/main/assets/Screen%20Shot%202021-02-23%20at%202.33.45%20AM.png)
    
    
-   ![](https://drive.google.com/file/d/1LqLp2VqhMQtoznvDqeUt4OwAw1ClexCR/view)
+   [https://drive.google.com/file/d/1LqLp2VqhMQtoznvDqeUt4OwAw1ClexCR/view]
    
    
 
