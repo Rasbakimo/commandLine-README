@@ -27,10 +27,9 @@
   
   * Instructions and demo:
 
-   ![screenshot](assets/Screen%5Shot%52021-02-23%5at%52.33.45%5AM.png)
+   ![screenshot](assets/Screen%5Shot%202021-02-23%20at%202.33.45%20AM.png)
    
    
-   ![](https://drive.google.com/file/d/1LqLp2VqhMQtoznvDqeUt4OwAw1ClexCR/view)
 
 
    vid or pic here
