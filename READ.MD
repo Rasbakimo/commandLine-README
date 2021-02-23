@@ -27,7 +27,7 @@
   
   * Instructions and demo:
 
-   ![screenshot](assets/Screen Shot 2021-02-23 at 2.33.45 AM.png)
+   ![screenshot](https://github.com/Rasbakimo/commandLine-README/blob/main/assets/Screen%20Shot%202021-02-23%20at%202.33.45%20AM.png)
    
    
 
