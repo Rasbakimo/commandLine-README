@@ -58,5 +58,5 @@
   
   For any questions, please contact me with the information below:
  
-  GitHub: [@Rasbakimo](undefined)
+  GitHub: [Rasbakimo](undefined)
   
