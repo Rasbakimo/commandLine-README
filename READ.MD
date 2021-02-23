@@ -25,7 +25,9 @@
   
   ## Usage 
   
-  * Instructions and demo:*
+  * Instructions and demo:
+
+   ![screenshot](images/
 
 
    vid or pic here
