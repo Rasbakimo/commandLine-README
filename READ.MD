@@ -9,6 +9,7 @@
   * What's the Objective:* 
   
   A quality README file template
+  
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -25,7 +26,8 @@
   ## Usage 
   
   * Instructions and demo:*
-  
+
+
    vid or pic here
   
   ## Tests
