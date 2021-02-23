@@ -27,7 +27,7 @@
   
   * Instructions and demo:
 
-   ![screenshot](images/
+   ![screenshot](assets/Screen%20Shot%202021-02-23%20at%202.33.45%20AM.png)
 
 
    vid or pic here
